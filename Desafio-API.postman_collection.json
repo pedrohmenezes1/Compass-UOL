@@ -6,164 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "Login",
-			"item": [
-				{
-					"name": "Register",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\" : \"pedro henrique\",\r\n    \"email\" : \"pedro.menezes_BOLS@compasso.com.br\",\r\n    \"password\" : \"123456\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/compasso/auth/register",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"compasso",
-								"auth",
-								"register"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Authenticate",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "  {\r\n    \"email\" : \"pedro.mk.13@hotmail.com\",\r\n    \"password\" : \"12345678\"\r\n  }\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/compasso/auth/authenticate",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"compasso",
-								"auth",
-								"authenticate"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Forgot Password",
-					"protocolProfileBehavior": {
-						"disabledSystemHeaders": {}
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "  {\r\n    \"email\" : \"pedro.mk.13@hotmail.com\"\r\n  }\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/compasso/auth/forgot_password",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"compasso",
-								"auth",
-								"forgot_password"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Reset Password",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "  {\r\n    \"email\": \"pedro.mk.13@hotmail.com\",\r\n    \"token\": \"e1b7232f4107129d2f1a4a8e67a06635ee8bba4d6\",\r\n    \"password\": \"12345678\"\r\n  }\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/compasso/auth/reset_password",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"compasso",
-								"auth",
-								"reset_password"
-							]
-						}
-					},
-					"response": []
-				}
-			],
-			"auth": {
-				"type": "bearer",
-				"bearer": [
-					{
-						"key": "token",
-						"value": "e1b7232f4107129d2f1a4a8e67a06635ee8bb4d6",
-						"type": "string"
-					}
-				]
-			},
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		},
-		{
 			"name": "Project",
 			"item": [
 				{
@@ -200,7 +42,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/compasso/projects/61c7272db7288b6adf156478",
+							"raw": "http://localhost:3000/compasso/projects/61c72b0200fd815f339e0215",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -209,7 +51,7 @@
 							"path": [
 								"compasso",
 								"projects",
-								"61c7272db7288b6adf156478"
+								"61c72b0200fd815f339e0215"
 							]
 						}
 					},
@@ -219,14 +61,7 @@
 					"name": "LIST Project",
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYzU0OWQ4NjRhNWE0YzI1ZjA5NWIyZiIsImlhdCI6MTY0MDQ0MDc2NiwiZXhwIjoxNjQwNTI3MTY2fQ.Rtu6wUpNQjQ7XZvgotncLWVj6VFTd2hf8n7S3bhcEPc",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
@@ -250,20 +85,13 @@
 					"name": "Post Project",
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYzU0OWQ4NjRhNWE0YzI1ZjA5NWIyZiIsImlhdCI6MTY0MDQ0MDc2NiwiZXhwIjoxNjQwNTI3MTY2fQ.Rtu6wUpNQjQ7XZvgotncLWVj6VFTd2hf8n7S3bhcEPc",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Novo projeto1\",\r\n    \"description\": \"Descrição do projeto1\",\r\n    \"tasks\": [\r\n       {\r\n           \"title\": \"Nova Tarefa\",\r\n           \"assignedTo\": \"61c549d864a5a4c25f095b2f\",\r\n           \"taskRelevance\": \"10\"\r\n       },\r\n       {\r\n           \"title\": \"Nova Tarefa2\",\r\n           \"assignedTo\": \"61c549d864a5a4c25f095b2f\",\r\n           \"taskRelevance\": \"10\"\r\n       }      \r\n    ]\r\n}   ",
+							"raw": "{\r\n    \"title\": \"Novo projeto1\",\r\n    \"description\": \"Descrição do projeto1\",\r\n    \"tasks\": [\r\n       {\r\n           \"title\": \"Nova Tarefa\",\r\n           \"taskRelevance\": \"10\"\r\n       },\r\n       {\r\n           \"title\": \"Nova Tarefa2\",\r\n           \"taskRelevance\": \"10\"\r\n       }      \r\n    ]\r\n}   ",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -301,8 +129,17 @@
 						},
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Novo projeto1\",\r\n    \"description\": \"Descrição do projeto1\",\r\n    \"tasks\": [\r\n       {\r\n           \"title\": \"Nova Tarefa\",\r\n           \"assignedTo\": \"61c549d864a5a4c25f095b2f\",\r\n           \"taskRelevance\": \"10\"\r\n       },\r\n       {\r\n           \"title\": \"Nova Tarefa2\",\r\n           \"assignedTo\": \"61c549d864a5a4c25f095b2f\",\r\n           \"taskRelevance\": \"10\"\r\n       }      \r\n    ]\r\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:3000/compasso/projects/61c549d864a5a4c25f095b2f",
+							"raw": "http://localhost:3000/compasso/projects/61c73b9073992d45cd67c1ac",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -311,7 +148,7 @@
 							"path": [
 								"compasso",
 								"projects",
-								"61c549d864a5a4c25f095b2f"
+								"61c73b9073992d45cd67c1ac"
 							]
 						}
 					},
@@ -333,7 +170,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/compasso/projects/61c2185217e9cc37240abb12",
+							"raw": "http://localhost:3000/compasso/projects/61c736711fd964a3fa000e03",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -342,7 +179,7 @@
 							"path": [
 								"compasso",
 								"projects",
-								"61c2185217e9cc37240abb12"
+								"61c736711fd964a3fa000e03"
 							]
 						}
 					},

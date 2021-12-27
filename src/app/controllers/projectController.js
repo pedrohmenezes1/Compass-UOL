@@ -1,16 +1,14 @@
 const express = require ('express');
-const authMiddleware = require('../middlewares/auth');
 
 const Project = require('../models/project');
 const Task = require('../models/task');
 
 const router = express.Router();
 
-router.use(authMiddleware);
 
 router.get('/', async (req, res) => {
     try {
-        const projects = await Project.find().populate(['user', 'tasks']);
+        const projects = await Project.find().populate(['tasks']);
 
         return res.status(200).send({ projects });
     }   catch (err) {
@@ -20,7 +18,7 @@ router.get('/', async (req, res) => {
 
 router.get('/:projectId', async (req, res) => {
     try {
-        const project = await Project.findById(req.params.projectId).populate(['user', 'tasks']);
+        const project = await Project.findById(req.params.projectId).populate(['tasks']);
 
         return res.status(200).send({ project });
     }   catch (err) {
@@ -32,7 +30,7 @@ router.post('/', async (req, res) => {
     try {
         const { title, description, tasks } = req.body
 
-        const project = await Project.create({ title, description, user: req.userId });
+        const project = await Project.create({ title, description });
 
         await Promise.all(tasks.map(async task => {
             const projectTask = new Task({ ...task, project: project._id });
@@ -85,7 +83,7 @@ router.put('/:projectId', async (req, res) => {
 
 router.delete('/:projectId', async (req, res) => {
     try {
-        await Project.findByIdAndRemove(req.params.projectId).populate('user');
+        await Project.findByIdAndRemove(req.params.projectId);
 
         return res.status(204).send();
     }   catch (err) {

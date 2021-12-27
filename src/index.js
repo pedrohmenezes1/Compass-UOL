@@ -5,10 +5,10 @@ const config = require('config')
 const app = express();
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/',(req, res) =>{
-    res.send('OK');
+    res.send('Alright');
 });
 
 require('./app/controllers/index')(app);
