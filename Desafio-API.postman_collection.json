@@ -15,21 +15,15 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYzU0OWQ4NjRhNWE0YzI1ZjA5NWIyZiIsImlhdCI6MTY0MDQ0MDc2NiwiZXhwIjoxNjQwNTI3MTY2fQ.Rtu6wUpNQjQ7XZvgotncLWVj6VFTd2hf8n7S3bhcEPc",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYzU1YTgzNWI0NTA0MTExYjE2Mjg5NiIsImlhdCI6MTY0MDMyNTg1NSwiZXhwIjoxNjQwNDEyMjU1fQ.208YP__y0CKSmuOkMk5lQZmQPHNgPkISHFn0tzpEDbI",
-								"type": "text"
+								"value": "",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
@@ -42,16 +36,17 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/compasso/projects/61c72b0200fd815f339e0215",
+							"raw": "http://localhost:3000/api/compasso/projects/61cbf923683b4ce0c1960359",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
 								"compasso",
 								"projects",
-								"61c72b0200fd815f339e0215"
+								"61cbf923683b4ce0c1960359"
 							]
 						}
 					},
@@ -59,20 +54,28 @@
 				},
 				{
 					"name": "LIST Project",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"auth": {
 							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:3000/compasso/projects/",
+							"raw": "http://localhost:3000/api/compasso/projects/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
 								"compasso",
 								"projects",
 								""
@@ -99,16 +102,16 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/compasso/projects/",
+							"raw": "http://localhost:3000/api/compasso/projects",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
 								"compasso",
-								"projects",
-								""
+								"projects"
 							]
 						}
 					},
@@ -118,20 +121,13 @@
 					"name": "PUT Project",
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYzU0OWQ4NjRhNWE0YzI1ZjA5NWIyZiIsImlhdCI6MTY0MDQ0MDc2NiwiZXhwIjoxNjQwNTI3MTY2fQ.Rtu6wUpNQjQ7XZvgotncLWVj6VFTd2hf8n7S3bhcEPc",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"Novo projeto1\",\r\n    \"description\": \"Descrição do projeto1\",\r\n    \"tasks\": [\r\n       {\r\n           \"title\": \"Nova Tarefa\",\r\n           \"assignedTo\": \"61c549d864a5a4c25f095b2f\",\r\n           \"taskRelevance\": \"10\"\r\n       },\r\n       {\r\n           \"title\": \"Nova Tarefa2\",\r\n           \"assignedTo\": \"61c549d864a5a4c25f095b2f\",\r\n           \"taskRelevance\": \"10\"\r\n       }      \r\n    ]\r\n}   ",
+							"raw": "{\r\n    \"title\": \"Novo projeto1\",\r\n    \"description\": \"Descrição do projeto1\",\r\n    \"tasks\": [\r\n       {\r\n           \"title\": \"Nova Tarefa3\",\r\n           \"assignedTo\": \"61c549d864a5a4c25f095b2f\",\r\n           \"taskRelevance\": \"10\"\r\n       }   \r\n    ]\r\n}   ",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -139,16 +135,17 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/compasso/projects/61c73b9073992d45cd67c1ac",
+							"raw": "http://localhost:3000/api/compasso/projects/61cbf3972c05f74328c6e23d",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
 								"compasso",
 								"projects",
-								"61c73b9073992d45cd67c1ac"
+								"61cbf3972c05f74328c6e23d"
 							]
 						}
 					},
@@ -158,28 +155,22 @@
 					"name": "DELETE Project",
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYzU0OWQ4NjRhNWE0YzI1ZjA5NWIyZiIsImlhdCI6MTY0MDQ0MDc2NiwiZXhwIjoxNjQwNTI3MTY2fQ.Rtu6wUpNQjQ7XZvgotncLWVj6VFTd2hf8n7S3bhcEPc",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/compasso/projects/61c736711fd964a3fa000e03",
+							"raw": "http://localhost:3000/api/compasso/projects/61cc047b6f27eff1dd1f44e3",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
 								"compasso",
 								"projects",
-								"61c736711fd964a3fa000e03"
+								"61cc047b6f27eff1dd1f44e3"
 							]
 						}
 					},
