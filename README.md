@@ -6,6 +6,7 @@
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/pedrohmenezes1/Compass-UOL?color=%2304D361">
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/pedrohmenezes1/Compass-UOL">
   <img alt="Status" src="https://img.shields.io/badge/Status-Completed-brightgreen">
+    <img alt="ES6" src="https://img.shields.io/badge/JS-ECMAScript%206-red">
 </p>
 
 # 💻 REST API em Node.js e Express.js - API Bloco de notas
